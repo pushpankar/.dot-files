@@ -6,6 +6,8 @@ URxvt.scrollBar: false
 !do not scroll with output
 URxvt*scrollTtyOutput:	false
 
+!add padding of 4 pixel
+URxvt.internalBorder:   12
 ! scroll in relation to buffer
 URxvt*scrollWithBuffer:	true
 
