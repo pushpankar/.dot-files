@@ -83,3 +83,32 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#Colorful ls output
+alias ls='ls --color=auto'
+#Long list
+alias ll='ls -lh'
+#Alias to show currrent battery and time to charge or discharge.
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -E "state|to\ full|percentage"'
+#Go to parent aliases
+alias .='cd ..'
+alias ..='cd ../..'
+alias ...='cd ../../..'
+#Change directory and list them
+alias cdl="cd `pwd`/$1 ;ls "
+#Check net connectivity
+alias netchk="ping -c2 google.com"
+#autotune powertop to save battery
+alias savebat='sudo powertop --auto-tune'
+#go to Work drive
+alias cdw='cd /media/pushpankar/Work'
+#go to Project folder
+alias cdproj='cd /media/pushpankar/Work/Web\ Practice/Projects'
+#Mount and go to Entertainment
+alias cde='cd /media/pushpankar/Entertainment'
+#Mount and go to Study
+alias cds='cd /media/pushpankar/Study'
+
+#Weather
+alias wtr='curl http://wttr.in/Srinagar'
+#System Update
+alias updt='sudo pacman -Syu'

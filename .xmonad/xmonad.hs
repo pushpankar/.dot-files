@@ -13,12 +13,11 @@ main =do
   xmonad $ desktopConfig
     { terminal = "urxvt"
     , modMask = mod4Mask
-    , manageHook = manageDocks <+> (isFullscreen --> doFullFloat) <+> manageHook desktopConfig
+    , manageHook = manageDocks <+> manageHook desktopConfig
     , layoutHook = noBorders myLayout
     , logHook = dynamicLogWithPP xmobarPP
                 { ppOutput = hPutStrLn xmproc
-                , ppTitle = xmobarColor "blue" "" . shorten 40
-                , ppLayout = const "" --to disable the layout info on xmobar
+                , ppLayout = const "" --to disable the layout info on xmobarPP
                 }
     , workspaces = myWorkspaces
     }
@@ -26,7 +25,7 @@ main =do
 myLayout = avoidStruts ( tiled ||| Mirror tiled ) ||| Full
   where
     --default layout algorithm partition
-    tiled = spacing 10 $ Tall nmaster delta ratio
+    tiled = smartSpacing 10 $ Tall nmaster delta ratio
 
     -- Default number of windows in master pane
     nmaster = 1

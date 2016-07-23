@@ -1,5 +1,6 @@
 Xft.lcdfilter: lcddefault
 URxvt.font: xft:Source Code Pro:pixelsize=15
+!URxvt.font: xft:Roboto:pixelsize=15
 URxvt.boldBont: xft:Source Code Pro:pixelsize=15:style=Bold
 URxvt.scrollBar: false
 
